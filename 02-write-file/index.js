@@ -3,7 +3,7 @@ const path = require('path');
 const readline = require('readline');
 
 let fileName = path.join(__dirname, 'text.txt');
-let writeStream = fs.createWriteStream(fileName);
+let outputFile = fs.createWriteStream(fileName);
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -16,7 +16,7 @@ rl.on('line', (input) => {
   if (input === 'exit') {
     rl.close();
   } else {
-    writeStream.write(input + '\n');
+    outputFile.write(input + '\n');
   }
 });
 
